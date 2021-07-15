@@ -14,7 +14,7 @@ PDC|Must be GND
 SD0|STM32-MOSI
 SD1|Float
 SD2|Float
-SD3|Must be GMD
+SD3|Must be GND
 P0|GPIO-P0 when used
 P1|GPI1-P0 when used
 P2|GPI2-P0 when used
