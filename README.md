@@ -15,10 +15,10 @@ SD0|STM32-MOSI
 SD1|Float
 SD2|Float
 SD3|Must be GND
-P0|GPIO-P0 when used
-P1|GPI1-P0 when used
-P2|GPI2-P0 when used
-P3|GPI3-P0 when used
+P0|GPIO or timer outpput when used
+P1|GPIO or timer outpput when used
+P2|GPIO or timer outpput when used
+P3|GPIO or timer outpput when used
 
 Implementation:
 
@@ -31,5 +31,21 @@ AD9959_SetChannelFrequency(&u_ad9959, Channel_All, 10000);
 // Sweep, use tim1 pwm out to trig Profile Pin
 // AD9959_SweepFrequency(&u_ad9959, Channel_All, 50000000, 0) ;
 // AD9959_SweepRates(&u_ad9959, Channel_All, 5000000, 125, 5000000, 125);
+
+```
+
+Troubleshooting:
+
+If the AD9959 failed to work after initilization, try to add some delays like this:
+
+```cpp
+// Send I/O Update signal to apply changes, however setting enabled channels doesn't need an I/O update
+static void AD9959_Update(AD9959_Handler *device)
+{
+  HAL_GPIO_WritePin(device->update_port, device->update_pin, GPIO_PIN_SET);
+  HAL_Delay(1);
+  HAL_GPIO_WritePin(device->update_port, device->update_pin, GPIO_PIN_RESET);
+  return;
+}
 
 ```
