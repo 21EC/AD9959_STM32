@@ -25,7 +25,7 @@ Implementation:
 ```cpp
 AD9959_Handler u_ad9959;
 AD9959_Init(&u_ad9959, &hspi1, ADI_CS_GPIO_Port, ADI_CS_Pin, ADI_RST_GPIO_Port, ADI_RST_Pin, ADI_UPDT_GPIO_Port, ADI_UPDT_Pin, 25000000, 0);
-AD9959_SetClock(&u_ad9959, 0, 0);
+AD9959_SetClock(&u_ad9959, 16, 0);
 AD9959_SetChannelFrequency(&u_ad9959, Channel_All, 10000);
 
 // Sweep, use tim1 pwm out to trig Profile Pin
