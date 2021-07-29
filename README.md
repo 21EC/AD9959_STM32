@@ -15,10 +15,10 @@ SD0|STM32-MOSI
 SD1|Float
 SD2|Float
 SD3|Must be GND
-P0|GPIO or timer outpput when used
-P1|GPIO or timer outpput when used
-P2|GPIO or timer outpput when used
-P3|GPIO or timer outpput when used
+P0|GPIO or timer output when used
+P1|GPIO or timer output when used
+P2|GPIO or timer output when used
+P3|GPIO or timer output when used
 
 Implementation:
 
